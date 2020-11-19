@@ -1,0 +1,105 @@
+# TOKENS PRIORITY
+MINIMAL = 1
+MEDIUM = 2
+HIGH = 3
+MAXIMAL = 4
+
+
+OPERATORS_PRIORITY = {
+    '>': MINIMAL,
+    '<': MINIMAL,
+    '==': MINIMAL,
+    '>=': MINIMAL,
+    '<=': MINIMAL,
+    '!=': MINIMAL,
+    '&&': MINIMAL,
+    '||': MINIMAL,
+    '===': MINIMAL,
+
+    '+':  MINIMAL,
+    '-':  MINIMAL,
+    '&': MINIMAL,
+    '|': MINIMAL,
+    '^': MINIMAL,
+    '>>': MINIMAL,
+    '<<': MINIMAL,
+
+    '*':  MEDIUM,
+    '/':  MEDIUM,
+    '%':  MEDIUM,
+    '//': MEDIUM,
+
+    '**':  HIGH,
+}
+OP_EXECUTORS = {
+    '+': lambda a, b: a + b,
+    '-': lambda a, b: a - b,
+    '*': lambda a, b: a * b,
+    '/': lambda a, b: a / b,
+    '%': lambda a, b: a % b,
+    '&': lambda a, b: a & b,
+    '|': lambda a, b: a | b,
+    '^': lambda a, b: a ^ b,
+    '>': lambda a, b: a > b,
+    '<': lambda a, b: a < b,
+    '>=': lambda a, b: a >= b,
+    '<=': lambda a, b: a <= b,
+    '>>': lambda a, b: a >> b,
+    '<<': lambda a, b: a << b,
+    '**': lambda a, b: a ** b,
+    '//': lambda a, b: a // b,
+    '==': lambda a, b: a == b,
+    '!=': lambda a, b: a != b,
+    '&&': lambda a, b: a and b,
+    '||': lambda a, b: a or b,
+    '===': lambda a, b: a is b,
+    '!==': lambda a, b: a is not b
+}
+TOKENS = {
+    '(': 'LPAR',
+    ')': 'RPAR',
+    '[': 'LSQB',
+    ']': 'RSQB',
+    '{': 'LBRACE',
+    '}': 'RBRACE',
+    ':': 'COLON',
+    ';': 'SEMICOLON',
+    ',': 'COMMA',
+    '+': 'PLUS',
+    '-': 'MINUS',
+    '*': 'STAR',
+    '/': 'SLASH',
+    '|': 'VBAR',
+    '&': 'AMPER',
+    '<': 'LESS',
+    '>': 'GREATER',
+    '=': 'EQUAL',
+    '.': 'DOT',
+    '%': 'PERCENT',
+    '==': 'EQEQUAL',
+    '!=': 'NOTEQUAL',
+    '<=': 'LESSEQUAL',
+    '>=': 'GREATEREQUAL',
+    '~': 'TILDE',
+    '^': 'CIRCUMFLEX',
+    '<<': 'LEFTSHIFT',
+    '>>': 'RIGHTSHIFT',
+    '**': 'DOUBLESTAR',
+    '+=': 'PLUSEQUAL',
+    '-=': 'MINEQUAL',
+    '*=': 'STAREQUAL',
+    '/=': 'SLASHEQUAL',
+    '%=': 'PERCENTEQUAL',
+    '&=': 'AMPEREQUAL',
+    '|=': 'VBAREQUAL',
+    '^=': 'CIRCUMFLEXEQUAL',
+    '<<=': 'LEFTSHIFTEQUAL',
+    '>>=': 'RIGHTSHIFTEQUAL',
+    '**=': 'DOUBLESTAREQUAL',
+    '//': 'DOUBLESLASH',
+    '//=': 'DOUBLESLASHEQUAL',
+    '...': 'ELLIPSIS',
+}
+
+
+SPECIAL_CHARACTERS = set(list(''.join(TOKENS.keys())))

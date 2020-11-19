@@ -1,0 +1,3 @@
+MINIMAL = 0
+MEDIUM = 1
+MAXIMAL = 2
